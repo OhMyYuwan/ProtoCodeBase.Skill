@@ -9,7 +9,7 @@ ProtoCodeBase 生态系统的 Agent 技能仓库
   <img src="./assets/github-header-banner.png" alt="ProtoCodeBase" width="900">
 </p>
 
-[English](./README_EN.md) · 简体中文
+[GitHub Pages](https://ohmyyuwan.github.io/ProtoCodeBase.Skill/) · [English](./README_EN.md) · 简体中文
 
 </div>
 

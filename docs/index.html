@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProtoCodeBase Skills</title>
+    <meta
+      name="description"
+      content="不要让你的 Agent 造轮子。ProtoCodeBase 用协议、项目地图和能力路由，让 Agent 沿着成熟工业模板实现你的需求。"
+    >
+    <meta property="og:title" content="ProtoCodeBase Skills">
+    <meta
+      property="og:description"
+      content="省 token，跟随成熟工业模板，需求导向地构建你的项目。"
+    >
+    <meta property="og:image" content="https://ohmyyuwan.github.io/ProtoCodeBase.Skill/assets/github-header-banner.png">
+    <link rel="canonical" href="https://ohmyyuwan.github.io/ProtoCodeBase.Skill/">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/theme/black.css">
+    <link rel="stylesheet" href="./site.css">
+  </head>
+  <body>
+    <div class="reveal pcb-deck">
+      <div class="slides">
+        <section class="slide-hero" data-background-color="#0b0d10">
+          <img class="brand-mark" src="./assets/github-header-banner.png" alt="ProtoCodeBase">
+          <p class="eyebrow">Agent Skill Repository</p>
+          <h1>ProtoCodeBase</h1>
+          <p class="lede">不要让你的 Agent 造轮子。</p>
+          <p class="body-copy">
+            让它少读一点，少猜一点，少在上下文里迷路。让它沿着成熟软件的骨架，
+            把你的需求变成可以落地的代码。
+          </p>
+          <div class="hero-actions">
+            <a href="#/5">安装 Skill</a>
+            <a href="https://github.com/OhMyYuwan/ProtoCodeBase.Skill">GitHub</a>
+          </div>
+        </section>
+
+        <section data-background-color="#f6f1e8" class="light-slide">
+          <p class="eyebrow">Need First</p>
+          <h2>需求先于代码</h2>
+          <p class="statement">
+            代码不是目的，需求才是。
+          </p>
+          <p class="body-copy narrow">
+            一次软件修改值得被保存的，不只是文件差异，还有需求如何被理解、
+            如何被拆解、如何被计划、如何被执行。
+          </p>
+        </section>
+
+        <section data-background-color="#111827">
+          <p class="eyebrow">Engineering Memory</p>
+          <h2>把聊天变成工程链路</h2>
+          <div class="flow">
+            <span>Request</span>
+            <i></i>
+            <span>Plan</span>
+            <i></i>
+            <span>Change</span>
+          </div>
+          <p class="body-copy narrow">
+            你的 Intent 仍然属于你。ProtoCodeBase 持久化的是程序规范化后的请求、
+            Agent 自主执行前的计划，以及真正落到代码里的变更。
+          </p>
+        </section>
+
+        <section data-background-color="#fffaf0" class="light-slide">
+          <p class="eyebrow">Token Economy</p>
+          <h2>省 token，不是省理解</h2>
+          <div class="route-grid">
+            <div>
+              <strong>Capabilities</strong>
+              <span>这个 App 实际能做什么</span>
+            </div>
+            <div>
+              <strong>Project Map</strong>
+              <span>模块如何组织，责任如何分配</span>
+            </div>
+            <div>
+              <strong>Route</strong>
+              <span>从需求直达目标代码位置</span>
+            </div>
+          </div>
+        </section>
+
+        <section data-background-color="#0f172a">
+          <p class="eyebrow">Industrial Templates</p>
+          <h2>与其创造，不如继承</h2>
+          <p class="statement">
+            成熟软件已经走过的路，不必每次从空白文件重新发明。
+          </p>
+          <p class="body-copy narrow">
+            文件管理、权限、协作、编辑器、工作流、历史记录、错误处理、部署方式：
+            ProtoCodeBase 希望把这些工业实践沉淀成 Agent 可以检索、裁剪、合并的说明书。
+          </p>
+        </section>
+
+        <section data-background-color="#f5f7fb" class="light-slide">
+          <p class="eyebrow">Install</p>
+          <h2>把协议交给 Agent</h2>
+          <pre><code>npx skills add https://github.com/OhMyYuwan/ProtoCodeBase.Skill.git --skill acp-v1-0-0</code></pre>
+          <p class="body-copy narrow">
+            安装后，仓库声明自己的协议版本；Agent 读取对应 Skill，
+            再按照协议说明书进入项目，而不是每次重新拆解整个系统。
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div class="deck-hint">← → 切换 · Esc 总览</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        transition: 'slide',
+        backgroundTransition: 'fade',
+        width: 1280,
+        height: 720,
+        margin: 0.06,
+        minScale: 0.2,
+        maxScale: 1.6
+      });
+    </script>
+  </body>
+</html>

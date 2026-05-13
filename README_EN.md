@@ -9,7 +9,7 @@ Agent skills for the ProtoCodeBase ecosystem
   <img src="./assets/github-header-banner.png" alt="ProtoCodeBase" width="900">
 </p>
 
-English · [简体中文](./README.md)
+[GitHub Pages](https://ohmyyuwan.github.io/ProtoCodeBase.Skill/) · English · [简体中文](./README.md)
 
 </div>
 
