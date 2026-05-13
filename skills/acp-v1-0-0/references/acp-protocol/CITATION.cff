@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "ACP-PUBLIC"
+message: "If you reference ACP-PUBLIC, please cite it using this metadata and review the package license terms."
+type: software
+version: "1.0.0-public-draft"
+date-released: "2026-03-17"
+license: "LicenseRef-ACP-Public-Draft-License"
+authors:
+  - family-names: "q1ngs0ng"
+    email: "yuw4n0@gmail.com"
+abstract: >-
+  ACP-PUBLIC is a controlled consumer-facing public distribution aligned to the
+  ACP 1.0.0 authority line.

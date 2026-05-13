@@ -1,0 +1,26 @@
+id: req_<request_id>
+title: "<short request title>"
+target_type: "<capability | project | custom>"
+target_id: "<primary semantic target id>"
+target_slice: "_root"
+operation: "<create | modify | repair | refactor | inspect | other operation label>"
+summary: |
+  <one concise summary of the intended modification>
+status: open
+created_at: "<ISO8601 timestamp>"
+
+# Optional fields:
+# intent: "<intent_id>"
+# notes: |
+#   <additional execution notes or user constraints>
+# priority: "<low | normal | high | urgent | custom>"
+# profile_refs: {}
+# capability_id: "<capability_id>"
+# derived_from_plan: "<plan_id>"
+# request_sync_state: "<aligned | pending_sync | superseded | custom>"
+# target_type guidance:
+# - use `project` for kernel-only project initialization or project-level work
+# - use `capability` when capability is enabled and the target is capability-grounded
+# - use `custom` only when the project already has a stable semantic vocabulary
+# supersedes_request: "<older_request_id>"
+# superseded_by_request: "<newer_request_id>"

@@ -1,0 +1,522 @@
+# ACP Agent Playbook
+#
+# Document ID: acp_agent_playbook
+# Version: 1.0.0-draft
+# Source: ACPv1.0.0/spec/
+# Consumer: ACP-compatible agents and runtimes
+#
+# PURPOSE:
+#   This file is a behavioral instruction playbook for agents operating on
+#   ACP-managed projects. It is NOT a spec summary. Every entry is a
+#   concrete DO / MUST_NOT / THEN instruction organized by execution stage.
+#
+# HOW TO USE:
+#   Load this file at bootstrap activation.
+#   Execute the stages in order for mutation operations.
+#   Guards apply across all stages at all times.
+#   "never" rules are absolute — no exception.
+#
+# AUTHORITY:
+#   All rules derive from the ACP spec at ACPv1.0.0/spec/.
+#   In case of conflict, the spec is authoritative.
+
+acp_version: "1.0.0"
+
+# ═══════════════════════════════════════════════════════
+# STAGE 1: BOOTSTRAP
+# Trigger: agent enters a directory — detect ACP presence
+# ═══════════════════════════════════════════════════════
+
+bootstrap:
+  trigger: ".acp/version.yaml detected in project root"
+
+  do:
+    - read .acp/version.yaml
+    - extract: acp_version, project_name, profiles (kernel/capability/support)
+    - check compatibility: agent must understand this acp_version (major.minor)
+    - if compatible: enter acp_active mode → proceed to intake
+    - if incompatible or version unrecognized: enter restricted_mode
+
+  must_not:
+    - scan repository broadly before reading .acp/version.yaml
+    - read source code before completing bootstrap
+    - assume ACP is active without detecting .acp/version.yaml
+
+  restricted_mode:
+    trigger: version unrecognized OR .acp/ structure missing or malformed
+    behavior:
+      - prefer: read-only operations
+      - prefer: explain and describe rather than modify
+      - prefer: preview before any change
+      - require: explicit user confirmation before any mutation
+    must_not:
+      - refuse to help entirely — restricted mode is a degraded mode, not a stop
+      - perform mutations without explicit user confirmation
+
+  then: intake
+
+
+# ═══════════════════════════════════════════════════════
+# STAGE 2: INTAKE
+# Load project context in strict order — never broad scan
+# ═══════════════════════════════════════════════════════
+
+intake:
+  description: >
+    Load project-local ACP context in stage-gated order.
+    Each file unlocks routing for the next. Never load all at once.
+
+  loading_order:
+    - step: 1
+      file: .acp/support/AGENT.md
+      condition: profiles.support == enabled
+      purpose: project entry guidance, execution order, path overrides
+      budget: minimal
+      quick_entry_behavior:
+        description: >
+          AGENT.md MAY contain a quick_entry block at the top of the file.
+          When present, read it first — it provides enough context to complete
+          bootstrap routing without reading the full AGENT.md body.
+        do:
+          - check if AGENT.md begins with a fenced YAML block with root key quick_entry
+          - if quick_entry block is present:
+              - read the quick_entry block only
+              - extract project_name, project_type, capabilities, active_request_id, status, next_step
+              - if active_request_id is present: surface it to the user immediately
+              - defer reading AGENT.md body until user intent is narrower
+          - if quick_entry block is absent:
+              - read AGENT.md normally at minimal budget
+        must_not:
+          - skip surfacing active_request_id when it is present in quick_entry
+          - treat quick_entry as a substitute for AGENT.md body when full guidance is needed
+          - read AGENT.md body eagerly when quick_entry already satisfies routing needs
+
+    - step: 2
+      file: .acp/support/PROJECT_MAP.yaml
+      condition: profiles.support == enabled
+      purpose: module structure, capability routes, entry files
+      budget: low
+
+    - step: 3
+      file: .acp/support/LOAD_RULES.yaml
+      condition: profiles.support == enabled
+      purpose: per-capability file loading rules, forbidden paths
+      budget: low
+
+    - step: 4
+      file: .acp/support/CHANGE_POLICY.yaml
+      condition: profiles.support == enabled
+      purpose: modification boundary rules, auto_allow / require_confirmation / forbidden / high_risk
+      budget: low
+
+    - step: 5
+      file: .acp/capability/capabilities.yaml
+      condition: profiles.capability == enabled
+      purpose: semantic capability definitions, slices, route_here_when, bridge_when
+      budget: low
+      navigation: capability-first (navigate by semantic target, not by file path)
+
+  must_not:
+    - scan entire repository before reading support files
+    - load source code before completing intake
+    - skip AGENT.md and jump directly to source code
+    - load capability before support when both are enabled
+    - ignore LOAD_RULES.yaml forbidden_paths — they are hard boundaries
+
+  kernel_only_project:
+    description: profiles.support == disabled AND profiles.capability == disabled
+    behavior:
+      - skip steps 1-5
+      - proceed directly to work_intake with no support context
+      - rely on user description for capability and scope classification
+
+  then: work_intake
+
+
+# ═══════════════════════════════════════════════════════
+# STAGE 3: WORK INTAKE
+# Before forming a Request — classify scope and authority
+# Only relevant for mutation operations (modify / repair / create)
+# ═══════════════════════════════════════════════════════
+
+work_intake:
+  description: >
+    Pre-Request classification step for mutation operations.
+    Not a required ACP lifecycle phase, but strongly recommended
+    when capability and support layers are enabled.
+    Intent recording and pending requirements are NOT authorization.
+
+  for_operations: [modify, repair, create]
+  skip_for_operations: [parse, inspect, validate, export, sync, run, build]
+
+  do:
+    - classify: which capability does this work belong to?
+    - assign: which slice within that capability owns the primary behavior?
+    - select authority: use the narrowest .acp/ boundary that fully covers the scope
+    - check bridge: does this work trigger a bridge_when condition in any slice?
+    - check history: does this overlap with pending requirements or completed clusters?
+    - identify first-contact: which files/modules to open first per capability routing?
+
+  intent_authorization_guard:
+    rule: >
+      A recorded intention is NOT execution authorization.
+      Pending requirements, wish lists, historical plans, and Intent objects
+      outside the Kernel are routing aids only.
+    must_not:
+      - treat a pending requirement as a Request
+      - begin plan generation because a historical plan exists
+      - modify code because a prior planning document describes it
+      - treat user reference to a pending idea as implicit Request authorization
+    should:
+      - ask user whether they want to open a new Request for referenced pending work
+
+  bridge_escalation:
+    trigger: work crosses a bridge_when condition defined in a slice
+    do:
+      - surface the bridge condition to the user
+      - confirm: handle as single cross-surface Request OR split into separate Requests?
+      - select authority boundary that covers confirmed full scope
+    must_not:
+      - silently expand scope without user confirmation
+      - proceed with a Request scoped too narrowly if bridge condition is known
+
+  then: request
+
+
+# ═══════════════════════════════════════════════════════
+# STAGE 4: REQUEST
+# Form a Request object before any mutation
+# ═══════════════════════════════════════════════════════
+
+request:
+  description: >
+    Request is the atomic evolution unit.
+    No mutation may proceed without a confirmed Request.
+
+  trigger: user expresses mutation intent AND work_intake complete
+
+  do:
+    - classify operation type: create | modify | repair | sync | run | build | validate | export | parse | inspect
+    - for mutation operations (create / modify / repair):
+        form Request object with:
+          id: "REQ-{sequential}"              # unique, immutable after formation
+          intent: "{user goal, 1 sentence}"
+          operation: "{operation type}"
+          target_type: "capability | module | path"
+          target_id: "{semantic capability id OR module OR path}"
+          scope: "{what will be affected}"
+          status: open
+    - present Request preview to user
+    - confirm with user before proceeding
+
+  must_not:
+    - start editing code before Request is formed and confirmed
+    - skip Request formation for any mutation operation
+    - treat raw user wording as the Request — distill it first
+    - reuse a prior Request for new work — create a new one
+    - modify an active Request after plan generation has started
+      (use supersession or append-only correction instead)
+
+  for_read_only_operations:
+    description: parse / inspect / validate
+    behavior:
+      - lightweight handling is allowed
+      - Request formation is optional but recommended for significant read operations
+
+  then: plan
+
+
+# ═══════════════════════════════════════════════════════
+# STAGE 5: PLAN
+# Form a Plan before execution — never reverse the order
+# ═══════════════════════════════════════════════════════
+
+plan:
+  description: >
+    Plan defines how the Request will be executed.
+    Plan must precede Change. This order is non-negotiable.
+
+  do:
+    - form Plan object linked to Request:
+        id: "PLN-{sequential}"
+        request: "{request_id}"
+        approach: "{how to accomplish the request}"
+        affected_modules: ["{module1}", "{module2}"]
+        steps: ["{step1}", "{step2}"]
+        validation: "{how to verify success}"
+        status: open
+    - present Plan to user
+    - for high-impact or high-risk changes: require explicit confirmation
+    - save Plan to .acp/kernel/plans/{plan_id}.yaml before execution
+
+  must_not:
+    - start executing code changes before Plan is confirmed
+    - skip Plan formation for any mutation operation
+    - form Plan without linking it to an active Request
+
+  compact_execution:
+    description: >
+      Compact plan expression is allowed when scope is bounded and risk is low.
+      Compact does NOT mean skipping R→P→C — it means the Plan may be brief.
+    still_requires:
+      - active Request exists
+      - Plan exists (may be brief/inline)
+      - Change will be recorded after execution
+    must_not:
+      - treat compact as permission to skip Request or Change
+
+  change_policy_check:
+    description: Before confirming Plan, check CHANGE_POLICY.yaml if support is enabled
+    auto_allow: proceed without extra confirmation
+    require_confirmation: ask user before including in Plan
+    forbidden: do not include — surface to user as out-of-scope
+    high_risk: warn user, require explicit confirmation
+
+  then: execution
+
+
+# ═══════════════════════════════════════════════════════
+# STAGE 6: EXECUTION
+# Implement the Plan within confirmed scope boundaries
+# ═══════════════════════════════════════════════════════
+
+execution:
+  description: >
+    Execute code changes strictly within the confirmed Plan scope.
+    Scope expansion mid-execution requires re-planning.
+
+  do:
+    - implement changes as defined in the confirmed Plan
+    - respect LOAD_RULES.yaml:
+        forbidden_paths: never touch, even if Plan seems to require it
+        protected_paths: require confirmation before touching
+    - respect CHANGE_POLICY.yaml at each file/module boundary
+    - if unexpected scope discovered: pause, surface to user, re-plan before continuing
+
+  must_not:
+    - modify files outside confirmed Plan scope without re-planning
+    - touch forbidden_paths under any circumstances
+    - bypass authorization_guard — high-impact changes require confirmation
+    - delete or suppress failing tests to make builds pass
+    - apply random changes hoping something works (shotgun debugging)
+
+  then: change
+
+
+# ═══════════════════════════════════════════════════════
+# STAGE 7: CHANGE
+# Record the Change object and bind to git commit
+# ═══════════════════════════════════════════════════════
+
+change:
+  description: >
+    Change closes the R→P→C loop.
+    Every mutation must produce a Change object linked to both Request and Plan.
+
+  do:
+    - commit code changes to git (local development)
+    - form Change object:
+        id: "CHG-{sequential}"
+        request: "{request_id}"
+        plan: "{plan_id}"
+        summary: "{what was done and outcome}"
+        affected_modules: ["{module1}", "{module2}"]
+        status: done
+        created_at: "{ISO8601 timestamp}"
+        git_refs:
+          - commit: "{sha}"
+            branch: "{branch_name}"
+    - save Change to .acp/kernel/changes/{change_id}.yaml
+
+  git_binding_rules:
+    description: >
+      Git workflow integration for ACP-managed projects.
+      See host/git_workflow_policy.md for full details.
+    
+    branch_strategy:
+      - create feature branch when Change is created
+      - naming format: <username>/<type>/<description>
+      - branch types: feature, bugfix, hotfix, refactor, docs, test, chore
+      - record branch name in Change object's branch field (optional but recommended)
+      - work on branch until Change is done
+    
+    commit_message_format:
+      - "follow Conventional Commits: <type>(<scope>): <subject>"
+      - "types: feat, fix, docs, style, refactor, perf, test, chore, revert"
+      - "example: feat(observation): implement AX element tree extraction"
+    
+    change_git_binding:
+      - done Change MUST include git_refs in local development mode
+      - open Change MAY temporarily omit git_refs
+      - one Change SHOULD correspond to one logical unit of work
+      - squash and merge commits are both valid — Kernel history governs, not git history
+      - git history does NOT replace Kernel Change history
+    
+    merge_strategy:
+      - personal branch to develop: squash and merge (keep history clean)
+      - develop to main: merge commit (preserve full history)
+      - hotfix to main: merge commit (traceability required)
+
+  must_not:
+    - close a Change without linking it to both Request and Plan
+    - rewrite or delete kernel history — all records are append-only
+    - treat a git commit as equivalent to a Change object
+
+  then: validation
+
+
+# ═══════════════════════════════════════════════════════
+# STAGE 8: VALIDATION
+# Verify the outcome and report to user
+# ═══════════════════════════════════════════════════════
+
+validation:
+  description: >
+    Verify that execution achieved the Request goal.
+    Report clearly. Surface anything unresolved.
+
+  do:
+    - check: did execution achieve the stated Request intent?
+    - run relevant tests or build commands if applicable
+    - check if support files are stale due to this change (see support_sync_check below)
+    - report to user:
+        what_happened: "{brief summary}"
+        what_changed: "{affected files and modules}"
+        outcome: "complete | partial | failed | blocked"
+        open_items: "{any unresolved issues or follow-up work}"
+
+  support_sync_check:
+    description: >
+      After a material change, check whether support files need updating.
+      This is not automatic — it is a prompt for human review.
+    check_when:
+      - new module or directory created
+      - module ownership or first-contact files changed
+      - capability slice routing changed
+      - structural boundary (forbidden/protected paths) changed
+    surface_to_user:
+      - which support files may be stale
+      - what specifically may need updating
+
+  must_not:
+    - declare success without verifying against the Request intent
+    - silently leave support files stale after structural changes
+
+  then: done
+
+
+# ═══════════════════════════════════════════════════════
+# GUARDS — Cross-stage, always active
+# These apply at every stage, not just when mentioned
+# ═══════════════════════════════════════════════════════
+
+guards:
+
+  compatibility:
+    description: Agent must be able to understand the declared ACP version
+    rule: >
+      If acp_version declared in .acp/version.yaml is not understood by this
+      agent, enter restricted_mode immediately.
+    trigger: bootstrap stage
+    on_failure: restricted_mode
+
+  state:
+    description: Kernel object ordering is non-negotiable
+    rules:
+      - Request MUST exist before Plan is formed
+      - Plan MUST exist before Change is created
+      - Change MUST link back to both Request and Plan
+      - no code modification is valid without a corresponding Change
+      - open Request MUST NOT be superseded silently — user must confirm
+
+  boundary:
+    description: Modification scope is enforced by support layer
+    rules:
+      - forbidden_paths in LOAD_RULES.yaml: never touch under any circumstances
+      - forbidden operations in CHANGE_POLICY.yaml: surface as out-of-scope, do not execute
+      - high_risk operations in CHANGE_POLICY.yaml: warn user, require explicit confirmation
+      - require_confirmation operations: ask before including in Plan
+
+  authorization:
+    description: Recording intent or having a plan does not grant execution permission
+    rules:
+      - pending requirements are NOT Requests
+      - Intent objects are NOT Requests
+      - historical plans are NOT execution authorization
+      - bridge_when condition does NOT auto-authorize scope expansion
+      - user must explicitly confirm Request scope before Plan generation
+      - user must explicitly confirm Plan before execution begins
+
+
+# ═══════════════════════════════════════════════════════
+# NEVER — Absolute prohibitions, no exceptions
+# ═══════════════════════════════════════════════════════
+
+never:
+  - modify code without an active, confirmed Request
+  - generate a Plan without an active Request
+  - record a Change without linking it to both Request and Plan
+  - rewrite, delete, or mutate existing Kernel history objects
+  - scan the entire repository before reading .acp/support/ files
+  - treat compact execution as permission to skip R→P→C closure
+  - treat project-local support files as protocol authority
+    (support files are project-local guidance, not ACP spec)
+  - touch forbidden_paths defined in LOAD_RULES.yaml
+  - execute forbidden operations defined in CHANGE_POLICY.yaml
+  - treat a pending requirement or historical plan as execution authorization
+  - suppress type errors or failing tests to make a build pass
+  - expand Request scope mid-execution without re-planning and user confirmation
+  - commit changes to protected branches without following project git_workflow policy
+
+
+# ═══════════════════════════════════════════════════════
+# OPERATION CLASSIFICATION REFERENCE
+# Use during work_intake to identify operation type
+# ═══════════════════════════════════════════════════════
+
+operations:
+  mutation:
+    - create: create new files, modules, or project structures
+    - modify: change existing behavior, code, or configuration
+    - repair: fix broken behavior within existing scope
+  read_only:
+    - parse: read and interpret project structure or ACP objects
+    - inspect: examine specific files, modules, or history
+    - validate: check conformance of .acp/ structure or Kernel objects
+  hybrid:
+    - sync: align project state with external source
+    - run: execute project code or scripts
+    - build: compile or package project artifacts
+    - export: produce a distributable form of the project or its ACP artifacts
+
+
+# ═══════════════════════════════════════════════════════
+# CONFORMANCE SHAPES REFERENCE
+# Determines which stages apply to this project
+# ═══════════════════════════════════════════════════════
+
+conformance_shapes:
+  kernel_only:
+    profiles: {kernel: required, capability: disabled, support: disabled}
+    intake_applies: false
+    work_intake_applies: partial  # capability classification only, no routing files
+    capability_navigation: false
+
+  kernel_plus_support:
+    profiles: {kernel: required, capability: disabled, support: enabled}
+    intake_applies: true
+    work_intake_applies: true
+    capability_navigation: false
+
+  kernel_plus_capability:
+    profiles: {kernel: required, capability: enabled, support: disabled}
+    intake_applies: partial  # load capabilities.yaml only
+    work_intake_applies: true
+    capability_navigation: true
+
+  full:
+    profiles: {kernel: required, capability: enabled, support: enabled}
+    intake_applies: true
+    work_intake_applies: true
+    capability_navigation: true
+    all_stages: true

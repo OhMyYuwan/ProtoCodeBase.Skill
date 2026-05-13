@@ -1,0 +1,18 @@
+repository: ProtoCodeBase.Skill
+schema_version: "0.1.0"
+protocols:
+  acp:
+    versions:
+      "1.0.0":
+        skill: acp-v1-0-0
+        status: stable
+        bundled_protocol_path: skills/acp-v1-0-0/references/acp-protocol
+        install:
+          github: npx skills add https://github.com/OhMyYuwan/ProtoCodeBase.Skill.git --skill acp-v1-0-0
+          manual: cp -R skills/acp-v1-0-0 ~/.agents/skills/
+        project_manifest:
+          protocol: acp
+          protocol_version: "1.0.0"
+          required_skill: acp-v1-0-0
+default_protocol: acp
+default_acp_version: "1.0.0"

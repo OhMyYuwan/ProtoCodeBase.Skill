@@ -1,0 +1,80 @@
+ACP-PUBLIC Draft License
+Version 1.0
+
+Copyright (c) 2026 q1ngs0ng
+All rights reserved.
+
+1. Scope
+
+This package and its contents, including the public draft, derived agent profile,
+trace manifest, host attachment guidance, and related public distribution
+materials, are proprietary works owned by the copyright holder.
+
+2. Limited Public Permission
+
+You may view this package and its contents solely for:
+
+- evaluation
+- review
+- discussion
+- non-commercial research
+
+No other rights are granted unless the copyright holder gives prior written
+permission.
+
+3. No Reproduction or Redistribution
+
+Except for limited quotation allowed by applicable law or by the explicit
+written permission of the copyright holder, you may not:
+
+- copy this package or substantial portions of it
+- redistribute this package or substantial portions of it
+- mirror, republish, or rehost this package or its contents
+- package this package or its contents into another distribution
+
+4. No Derivative Protocol or Package Publication
+
+Without prior written permission, you may not:
+
+- modify and publish ACP-PUBLIC or a modified version of ACP-PUBLIC
+- publish a derivative, compatible, competing, or renamed protocol or package based on ACP or ACP-PUBLIC
+- publish commercial, enterprise, or productized derivatives of ACP or ACP-PUBLIC
+
+5. No Commercial or Enterprise Use
+
+Without prior written permission, you may not use this package or ACP-PUBLIC for:
+
+- commercial products or services
+- paid consulting or client delivery
+- internal enterprise standardization or deployment
+- SaaS, platform, SDK, framework, or tool commercialization
+- training or packaging proprietary enterprise workflows based on ACP or ACP-PUBLIC
+
+6. No Trademark or Endorsement Rights
+
+No trademark, brand, endorsement, certification, or naming rights are granted.
+
+7. No Implied License
+
+No implied license is granted by publication, discussion, citation, or public
+availability.
+
+8. Limited Quotation
+
+Short quotations for commentary, criticism, scholarship, or review may be used
+only to the extent allowed by applicable law and must not substitute for the
+package or any substantial portion of it.
+
+9. Warranty and Liability
+
+This package is provided "as is", without warranty of any kind, express or
+implied. To the maximum extent permitted by law, the copyright holder is not
+liable for any claim, damages, or other liability arising from or related to
+this package.
+
+10. Permissions Contact
+
+For licensing, commercial use, enterprise use, derivative use, or redistribution
+requests, contact:
+
+- q1ngs0ng <yuw4n0@gmail.com>

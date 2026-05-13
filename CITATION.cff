@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "ProtoCodeBase.Skill"
+message: "If you use ProtoCodeBase.Skill in research or publications, please cite this repository."
+type: software
+authors:
+  - name: "ProtoCodeBase maintainers"
+date-released: "2026-05-13"
+version: "0.1.0"
+license: MIT

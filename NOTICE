@@ -1,0 +1,25 @@
+ProtoCodeBase.Skill
+Copyright (c) 2026 ProtoCodeBase.
+
+This repository publishes Agent skills, registries, scripts, and repository
+documentation under the MIT License, unless a file or directory says otherwise.
+
+Bundled protocol references are separate materials.
+
+Protocol packages under paths such as:
+
+```text
+skills/*/references/
+```
+
+may include their own LICENSE, NOTICE, citation, governance, or usage terms.
+Those bundled protocol materials remain governed by their own terms and are not
+relicensed by the root MIT License.
+
+In particular, ACP public/compiled protocol materials may carry source-available
+or non-commercial terms. Always read the LICENSE inside the bundled protocol
+reference package before redistributing, modifying, or using it commercially.
+
+The names "ProtoCodeBase", "ACP", "Agent Content Protocol", associated logos,
+visual identity, and branding assets are not licensed as trademarks by the MIT
+License. No endorsement, certification, or brand usage rights are granted.

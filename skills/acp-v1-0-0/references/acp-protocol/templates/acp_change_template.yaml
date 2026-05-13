@@ -1,0 +1,26 @@
+id: change_<change_id>
+request: "<request_id>"
+plan: "<plan_id>"
+summary: |
+  <one concise summary of the execution result>
+affected_modules:
+  - "<module_or_path materially affected>"
+status: open
+created_at: "<ISO8601 timestamp>"
+git_refs:
+  - commit: "<commit_sha>"
+    branch: "<branch_name>"
+
+# Optional fields:
+# affected_semantic_targets:
+#   - "<semantic_target_id>"
+# affected_capabilities:
+#   - "<capability_id>"
+# notes: |
+#   <additional result notes>
+
+# Local-development rule:
+# - if status is done, git_refs MUST exist
+# - if status is open and commit binding is still pending, git_refs MAY be added later
+# Release-mode rule:
+# - git_refs MAY be removed

@@ -1,0 +1,1733 @@
+---
+package_id: acp-public
+package_version: "1.0.0-public-draft"
+source_protocol_version: "1.0.0"
+format_version: "0.1"
+cut_profile: acp_public_distribution_profile
+source_documents:
+- document_id: acp_top_spec
+  status: Stable
+  class: Normative Specification
+- document_id: acp_kernel_spec
+  status: Stable
+  class: Normative Specification
+- document_id: acp_capability_spec
+  status: Stable
+  class: Normative Specification
+- document_id: acp_support_layer_spec
+  status: Stable
+  class: Normative Specification
+- document_id: acp_runtime_spec
+  status: Draft
+  class: Runtime Specification
+- document_id: acp_runtime_bootstrap_spec
+  status: Draft
+  class: Runtime Specification
+retained_rules:
+- public_rule_id: draft.acp_top_spec.what_is_acp
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Core ACP Model > What is ACP
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::what_is_acp
+  source_role: explanation
+  conditions: []
+- public_rule_id: draft.acp_top_spec.evolution_model
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Core ACP Model > Evolution Model
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::evolution_model
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_top_spec.four_layer_architecture
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Core ACP Model > Four-Layer Architecture
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::four_layer_architecture
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_top_spec.layer_dependencies
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Core ACP Model > Layer Dependencies
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::layer_dependencies
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_top_spec.strict_boundaries
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Core ACP Model > Strict Boundaries
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::strict_boundaries
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_top_spec.deployment_model_and_interpretation_boundary
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Core ACP Model > Deployment Model and Interpretation Boundary
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::deployment_model_and_interpretation_boundary
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.request_atomic_evolution_unit
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Request as the atomic evolution unit
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_atomic_evolution_unit
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.request_creation_baseline
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Baseline Request Creation Requirements
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_creation_baseline
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.request_schema_execution_eligibility
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Request schema
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_schema_execution_eligibility
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.plan_as_executable_blueprint
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Plan as executable blueprint
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_as_executable_blueprint
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.plan_generation_baseline
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Baseline Plan Generation Requirements
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_generation_baseline
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.plan_confirmation_execution_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Plan confirmation
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_confirmation_execution_rule
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.plan_schema_execution_eligibility
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Plan schema
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_schema_execution_eligibility
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.change_schema_execution_eligibility
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Change schema
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::change_schema_execution_eligibility
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.required_execution_sequence
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Required execution sequence
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::required_execution_sequence
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.direct_modification_prohibition
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Direct modification prohibition
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::direct_modification_prohibition
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.request_as_normalized_execution_authority
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Request as normalized execution authority
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_as_normalized_execution_authority
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.request_to_plan_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Request → Plan rule
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_to_plan_rule
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.plan_required_before_change
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Plan required before Change
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_required_before_change
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.plan_to_request_synchronization
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Plan-to-Request synchronization
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_to_request_synchronization
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.alignment_blocking_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Alignment blocking rule
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::alignment_blocking_rule
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_kernel_spec.local_mode_git_binding_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Local mode rule
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::local_mode_git_binding_rule
+  source_role: normative-rule
+  conditions:
+  - local-development
+- public_rule_id: draft.acp_kernel_spec.release_mode_git_binding_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Kernel Closure > Release mode rule
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::release_mode_git_binding_rule
+  source_role: normative-rule
+  conditions:
+  - release-mode
+- public_rule_id: draft.acp_capability_spec.capability_as_routing_key
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Capability as routing key
+  source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_as_routing_key
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+- public_rule_id: draft.acp_capability_spec.capability_support_boundary
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Relationship to Support Layer
+  source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_support_boundary
+  source_role: guard-boundary
+  conditions:
+  - capability-enabled
+- public_rule_id: draft.acp_capability_spec.capability_vs_module
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Capability vs Module
+  source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_vs_module
+  source_role: guard-boundary
+  conditions:
+  - capability-enabled
+- public_rule_id: draft.acp_capability_spec.capability_use_in_request
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Capability use in Request
+  source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_use_in_request
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+- public_rule_id: draft.acp_capability_spec.capability_usage_in_plan
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Capability usage in Plan
+  source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_usage_in_plan
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+- public_rule_id: draft.acp_support_layer_spec.support_layer_optional
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Support Layer is Optional
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::support_layer_optional
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_support_layer_spec.support_as_context_interface
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Support as context interface
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::support_as_context_interface
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_support_layer_spec.support_must_not_replace_kernel
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Support must not replace Kernel
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::support_must_not_replace_kernel
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_support_layer_spec.capability_oriented_navigation
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Capability-oriented navigation
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::capability_oriented_navigation
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_support_layer_spec.progressive_disclosure
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Progressive disclosure
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::progressive_disclosure
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_support_layer_spec.project_map_purpose
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Purpose
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::project_map_purpose
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_support_layer_spec.load_rules_purpose
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > Purpose
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::load_rules_purpose
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_support_layer_spec.agent_md_quick_entry_block
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Capability and Support Boundaries > AGENT.md quick_entry block
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::agent_md_quick_entry_block
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_runtime_bootstrap_spec.bootstrap_entry_conditions
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > 4. Bootstrap Entry Conditions
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::bootstrap_entry_conditions
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.acp_creation_path_recognition
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > ACP creation-path recognition
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::acp_creation_path_recognition
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.bootstrap_minimum_inputs
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > 5. Bootstrap Minimum Inputs
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::bootstrap_minimum_inputs
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.version_first_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Version-first rule
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::version_first_rule
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.support_before_broad_scan_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Support-before-broad-scan
+    rule
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::support_before_broad_scan_rule
+  source_role: runtime-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_runtime_bootstrap_spec.capability_first_interpretation_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Capability-first interpretation
+    rule
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::capability_first_interpretation_rule
+  source_role: runtime-rule
+  conditions:
+  - capability-enabled
+- public_rule_id: draft.acp_runtime_bootstrap_spec.need_based_kernel_loading
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Need-based kernel loading
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::need_based_kernel_loading
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.companion_deferral_rule
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Companion deferral rule
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::companion_deferral_rule
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.bootstrap_output_obligations
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > 7. Bootstrap Output Obligations
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::bootstrap_output_obligations
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.missing_structure_disclosure
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Missing-structure disclosure
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::missing_structure_disclosure
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.restricted_bootstrap_triggers
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Restricted bootstrap triggers
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::restricted_bootstrap_triggers
+  source_role: runtime-rule
+  conditions:
+  - restricted-runtime
+- public_rule_id: draft.acp_runtime_bootstrap_spec.restricted_bootstrap_behavior
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Restricted bootstrap behavior
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::restricted_bootstrap_behavior
+  source_role: runtime-rule
+  conditions:
+  - restricted-runtime
+- public_rule_id: draft.acp_runtime_bootstrap_spec.restricted_bootstrap_limitations
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Restricted bootstrap limitations
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::restricted_bootstrap_limitations
+  source_role: guard-boundary
+  conditions:
+  - restricted-runtime
+- public_rule_id: draft.acp_runtime_bootstrap_spec.initialization_path
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Initialization path
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::initialization_path
+  source_role: runtime-rule
+  conditions:
+  - init-path
+- public_rule_id: draft.acp_runtime_bootstrap_spec.scaffold_path_selection
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Scaffold Path Selection
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::scaffold_path_selection
+  source_role: runtime-rule
+  conditions:
+  - creation-task
+- public_rule_id: draft.acp_runtime_bootstrap_spec.scaffold_root_layout_requirements
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Scaffold Root Layout Requirements
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::scaffold_root_layout_requirements
+  source_role: runtime-rule
+  conditions:
+  - scaffold-path
+- public_rule_id: draft.acp_runtime_spec.runtime_lifecycle_project_intake_order
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Default Intake Order
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_project_intake_order
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.runtime_lifecycle_minimum_first_intake
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Minimum-First Intake Discipline
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_minimum_first_intake
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.runtime_lifecycle_support_guided_structural_routing
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Support-Guided Structural
+    Routing
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_support_guided_structural_routing
+  source_role: runtime-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_runtime_spec.runtime_lifecycle_route_expansion_control
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Route Expansion Control
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_route_expansion_control
+  source_role: runtime-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_runtime_spec.runtime_lifecycle_reuse_before_reload
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Reuse-Before-Reload Discipline
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_reuse_before_reload
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.intent_normalization
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Intent Normalization
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::intent_normalization
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.request_formation
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Request Formation
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::request_formation
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.plan_as_execution_guidance
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Plan as Execution Guidance
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::plan_as_execution_guidance
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.plan_revision_alignment_behavior
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Plan Revision and Alignment
+    Behavior
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::plan_revision_alignment_behavior
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.compact_plan_expression_boundary
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Compact Plan Expression
+    Boundary
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::compact_plan_expression_boundary
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.authorization_gate
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Authorization Gate
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::authorization_gate
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.execution
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Execution
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::execution
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.change_recording
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Change Recording
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::change_recording
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.validation
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Validation
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::validation
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.restricted_mode_triggers
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Restricted Mode triggers
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::restricted_mode_triggers
+  source_role: runtime-rule
+  conditions:
+  - restricted-runtime
+- public_rule_id: draft.acp_runtime_spec.restricted_mode_behavior
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Restricted Mode behavior
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::restricted_mode_behavior
+  source_role: runtime-rule
+  conditions:
+  - restricted-runtime
+- public_rule_id: draft.acp_runtime_spec.restricted_mode_limitations
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > Restricted Mode limitations
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::restricted_mode_limitations
+  source_role: guard-boundary
+  conditions:
+  - restricted-runtime
+- public_rule_id: draft.acp_runtime_spec.runtime_and_project_local_support_boundary
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Runtime Entry and Runtime Consumption > 11. Runtime and Project-local
+    Support Boundary
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_and_project_local_support_boundary
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_top_spec.conformance_model
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Conformance Model
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::conformance_model
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_top_spec.base_conformance_shape_meaning
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Shape Meaning and Anti-Ranking Clarification
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::base_conformance_shape_meaning
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_top_spec.kernel_only_shape
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Kernel-only
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::kernel_only_shape
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_top_spec.kernel_capability_shape
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Kernel + Capability
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::kernel_capability_shape
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+- public_rule_id: draft.acp_top_spec.kernel_support_shape
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Kernel + Support
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::kernel_support_shape
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: draft.acp_top_spec.full_acp_shape
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Full ACP
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::full_acp_shape
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  - support-enabled
+- public_rule_id: draft.acp_top_spec.conformance_validation
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Conformance Validation
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::conformance_validation
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_top_spec.compatibility_vs_conformance
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Compatibility vs Conformance
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::compatibility_vs_conformance
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_top_spec.authorization_vs_conformance
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Authorization vs Conformance
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::authorization_vs_conformance
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.minimum_bootstrap_conformance
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Minimum bootstrap conformance
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::minimum_bootstrap_conformance
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_bootstrap_spec.non_conformant_bootstrap_behavior
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Non-conformant bootstrap behavior
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::non_conformant_bootstrap_behavior
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.minimum_runtime_conformance
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Minimum runtime conformance
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::minimum_runtime_conformance
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: draft.acp_runtime_spec.non_conformant_runtime_behavior
+  output_surface: ACP_PUBLIC_DRAFT.md
+  output_location: Conformance Surface > Non-conformant runtime behavior
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::non_conformant_runtime_behavior
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_top_spec.evolution_model
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[core_model]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::evolution_model
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_top_spec.four_layer_architecture
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[core_model]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::four_layer_architecture
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_top_spec.layer_dependencies
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[core_model]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::layer_dependencies
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_top_spec.strict_boundaries
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[core_model]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::strict_boundaries
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_top_spec.deployment_model_and_interpretation_boundary
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[core_model]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::deployment_model_and_interpretation_boundary
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.agent_facing_bootstrap_requirement
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[core_model]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::agent_facing_bootstrap_requirement
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.request_atomic_evolution_unit
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_atomic_evolution_unit
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.request_schema_execution_eligibility
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_schema_execution_eligibility
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.request_as_normalized_execution_authority
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_as_normalized_execution_authority
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.request_to_plan_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_to_plan_rule
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.plan_confirmation_execution_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_confirmation_execution_rule
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.plan_schema_execution_eligibility
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_schema_execution_eligibility
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.change_schema_execution_eligibility
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::change_schema_execution_eligibility
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.required_execution_sequence
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::required_execution_sequence
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.direct_modification_prohibition
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::direct_modification_prohibition
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.plan_required_before_change
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_required_before_change
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.plan_to_request_synchronization
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_to_request_synchronization
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.alignment_blocking_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::alignment_blocking_rule
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_kernel_spec.local_mode_git_binding_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::local_mode_git_binding_rule
+  source_role: normative-rule
+  conditions:
+  - local-development
+- public_rule_id: profile.acp_kernel_spec.release_mode_git_binding_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::release_mode_git_binding_rule
+  source_role: normative-rule
+  conditions:
+  - release-mode
+- public_rule_id: profile.acp_runtime_spec.request_plan_change_alignment
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::request_plan_change_alignment
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.runtime_behavior_for_alignment_failure
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[kernel_closure]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_behavior_for_alignment_failure
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_capability_spec.capability_as_routing_key
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_as_routing_key
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+- public_rule_id: profile.acp_capability_spec.capability_support_boundary
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_support_boundary
+  source_role: guard-boundary
+  conditions:
+  - capability-enabled
+- public_rule_id: profile.acp_capability_spec.capability_vs_module
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_vs_module
+  source_role: guard-boundary
+  conditions:
+  - capability-enabled
+- public_rule_id: profile.acp_support_layer_spec.support_as_context_interface
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::support_as_context_interface
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_support_layer_spec.support_must_not_replace_kernel
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::support_must_not_replace_kernel
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_support_layer_spec.capability_oriented_navigation
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::capability_oriented_navigation
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_support_layer_spec.project_map_purpose
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::project_map_purpose
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_support_layer_spec.load_rules_purpose
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::load_rules_purpose
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_support_layer_spec.agent_md_quick_entry_block
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[capability_support_boundary]
+  source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::agent_md_quick_entry_block
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_runtime_bootstrap_spec.bootstrap_entry_conditions
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::bootstrap_entry_conditions
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.acp_creation_path_recognition
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::acp_creation_path_recognition
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.bootstrap_minimum_inputs
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::bootstrap_minimum_inputs
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.version_first_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::version_first_rule
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.support_before_broad_scan_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::support_before_broad_scan_rule
+  source_role: runtime-rule
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_runtime_bootstrap_spec.capability_first_interpretation_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::capability_first_interpretation_rule
+  source_role: runtime-rule
+  conditions:
+  - capability-enabled
+- public_rule_id: profile.acp_runtime_bootstrap_spec.need_based_kernel_loading
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::need_based_kernel_loading
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.companion_deferral_rule
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::companion_deferral_rule
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.bootstrap_output_obligations
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::bootstrap_output_obligations
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.initial_response_discipline
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::initial_response_discipline
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.missing_structure_disclosure
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::missing_structure_disclosure
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.restricted_bootstrap_triggers
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::restricted_bootstrap_triggers
+  source_role: runtime-rule
+  conditions:
+  - restricted-runtime
+- public_rule_id: profile.acp_runtime_bootstrap_spec.restricted_bootstrap_behavior
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::restricted_bootstrap_behavior
+  source_role: runtime-rule
+  conditions:
+  - restricted-runtime
+- public_rule_id: profile.acp_runtime_bootstrap_spec.restricted_bootstrap_limitations
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::restricted_bootstrap_limitations
+  source_role: guard-boundary
+  conditions:
+  - restricted-runtime
+- public_rule_id: profile.acp_runtime_bootstrap_spec.initialization_path
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::initialization_path
+  source_role: runtime-rule
+  conditions:
+  - init-path
+- public_rule_id: profile.acp_runtime_bootstrap_spec.scaffold_path_selection
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::scaffold_path_selection
+  source_role: runtime-rule
+  conditions:
+  - creation-task
+- public_rule_id: profile.acp_runtime_bootstrap_spec.scaffold_root_layout_requirements
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_entry]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::scaffold_root_layout_requirements
+  source_role: runtime-rule
+  conditions:
+  - scaffold-path
+- public_rule_id: profile.acp_runtime_spec.runtime_lifecycle_project_intake_order
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_project_intake_order
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.runtime_lifecycle_minimum_first_intake
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_minimum_first_intake
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.runtime_lifecycle_support_guided_structural_routing
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_support_guided_structural_routing
+  source_role: runtime-rule
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_runtime_spec.runtime_lifecycle_route_expansion_control
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_route_expansion_control
+  source_role: runtime-rule
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_runtime_spec.runtime_lifecycle_reuse_before_reload
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_lifecycle_reuse_before_reload
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.intent_normalization
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::intent_normalization
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.request_formation
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::request_formation
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.plan_as_execution_guidance
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::plan_as_execution_guidance
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.plan_revision_alignment_behavior
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::plan_revision_alignment_behavior
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.compact_plan_expression_boundary
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::compact_plan_expression_boundary
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.authorization_gate
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::authorization_gate
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.execution
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::execution
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.change_recording
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::change_recording
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.validation
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::validation
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.restricted_mode_triggers
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::restricted_mode_triggers
+  source_role: runtime-rule
+  conditions:
+  - restricted-runtime
+- public_rule_id: profile.acp_runtime_spec.restricted_mode_behavior
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::restricted_mode_behavior
+  source_role: runtime-rule
+  conditions:
+  - restricted-runtime
+- public_rule_id: profile.acp_runtime_spec.restricted_mode_limitations
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::restricted_mode_limitations
+  source_role: guard-boundary
+  conditions:
+  - restricted-runtime
+- public_rule_id: profile.acp_runtime_spec.runtime_and_project_local_support_boundary
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[runtime_consumption]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_and_project_local_support_boundary
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_top_spec.conformance_model
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::conformance_model
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_top_spec.base_conformance_shape_meaning
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::base_conformance_shape_meaning
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_top_spec.kernel_only_shape
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::kernel_only_shape
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_top_spec.kernel_capability_shape
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::kernel_capability_shape
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+- public_rule_id: profile.acp_top_spec.kernel_support_shape
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::kernel_support_shape
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+- public_rule_id: profile.acp_top_spec.full_acp_shape
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::full_acp_shape
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  - support-enabled
+- public_rule_id: profile.acp_top_spec.conformance_validation
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::conformance_validation
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.minimum_bootstrap_conformance
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::minimum_bootstrap_conformance
+  source_role: normative-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_bootstrap_spec.non_conformant_bootstrap_behavior
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::non_conformant_bootstrap_behavior
+  source_role: guard-boundary
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.minimum_runtime_conformance
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::minimum_runtime_conformance
+  source_role: runtime-rule
+  conditions: []
+- public_rule_id: profile.acp_runtime_spec.non_conformant_runtime_behavior
+  output_surface: ACP_AGENT_CONSUMPTION_PROFILE.yaml
+  output_location: clusters[conformance]
+  source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::non_conformant_runtime_behavior
+  source_role: guard-boundary
+  conditions: []
+retained_guard_families:
+- family_id: request-plan-change-non-bypass
+  canonical_rule_source: acp_kernel_spec::required_execution_sequence
+  canonical_guard_source: acp_kernel_spec::direct_modification_prohibition
+  supporting_repeats_retained:
+  - acp_kernel_spec::plan_required_before_change
+  - acp_runtime_bootstrap_spec::initial_response_discipline
+- family_id: request-plan-alignment-blocking
+  canonical_rule_source: acp_kernel_spec::plan_to_request_synchronization
+  canonical_guard_source: acp_kernel_spec::alignment_blocking_rule
+  supporting_repeats_retained:
+  - acp_kernel_spec::request_as_normalized_execution_authority
+  - acp_runtime_spec::request_plan_change_alignment
+  - acp_runtime_spec::runtime_behavior_for_alignment_failure
+- family_id: support-does-not-replace-kernel
+  canonical_rule_source: acp_support_layer_spec::support_as_context_interface
+  canonical_guard_source: acp_support_layer_spec::support_must_not_replace_kernel
+  supporting_repeats_retained:
+  - acp_top_spec::strict_boundaries
+- family_id: capability-means-semantics-not-structure
+  canonical_rule_source: acp_capability_spec::capability_as_routing_key
+  canonical_guard_source: acp_capability_spec::capability_support_boundary
+  supporting_repeats_retained:
+  - acp_capability_spec::capability_vs_module
+  - acp_support_layer_spec::capability_oriented_navigation
+- family_id: compact-expression-no-semantic-bypass
+  canonical_rule_source: acp_runtime_spec::plan_as_execution_guidance
+  canonical_guard_source: acp_runtime_spec::compact_plan_expression_boundary
+  supporting_repeats_retained:
+  - acp_runtime_spec::plan_revision_alignment_behavior
+omitted_anchors:
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_definition_location
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_id_rules
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_kernel_boundary
+  source_role: guard-boundary
+  conditions:
+  - capability-enabled
+  omission_reason: supporting-repeat-not-retained-first-pass
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_layer_purpose
+  source_role: explanation
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_minimal_principle
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_naming_rules
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_object_schema
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_root_slice
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_slices
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_stability_rule
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_top_level_structure
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::capability_usage_in_support_layer
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_capability_spec
+  source_anchor: acp_capability_spec::minimal_capability_file
+  source_role: table-of-reference
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::agent_conformance
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::append_only_history
+  source_role: guard-boundary
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::change_granularity_guidance
+  source_role: explanation
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::current_confirmed_plan_precedence
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: supporting-repeat-not-retained-first-pass
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::evolution_driven_development
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::evolution_invariants
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::history_immutability
+  source_role: guard-boundary
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::kernel_enforcement_rule
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::kernel_object_set
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::kernel_overview
+  source_role: explanation
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::kernel_philosophy
+  source_role: explanation
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::kernel_stability_principle
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::kernel_stability_rule
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::minimal_context_execution
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::minimal_context_principle
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_generation_alignment_follow_up
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_modification_awareness
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: supporting-repeat-not-retained-first-pass
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::plan_to_change_relationship
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_creation_alignment_follow_up
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_creation_semantic_profile_extension
+  source_role: normative-rule
+  conditions:
+  - semantic-profile-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::request_not_user_input
+  source_role: guard-boundary
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::semantic_targeting
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_kernel_spec
+  source_anchor: acp_kernel_spec::state_machine_authority
+  source_role: guard-boundary
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::bootstrap_and_project_local_support_boundary
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::bootstrap_purpose
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::capability_first_summary_preference
+  source_role: runtime-rule
+  conditions:
+  - capability-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_bootstrap_spec
+  source_anchor: acp_runtime_bootstrap_spec::position_and_authority
+  source_role: guard-boundary
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::export_handoff
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::guard_enforcement_responsibility
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::invalid_object_and_repair_handling
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::invalid_object_bypass_non_conformant
+  source_role: guard-boundary
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::lower_frequency_mapping_detail_deferral
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::position_and_authority
+  source_role: guard-boundary
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::project_intake_layer
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::project_intake_responsibility
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::recommended_component_behavior
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::runtime_purpose
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_runtime_spec
+  source_anchor: acp_runtime_spec::task_orchestration_responsibility
+  source_role: runtime-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::agent_md_authority_rule
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+  omission_reason: supporting-repeat-not-retained-first-pass
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::agent_md_core_object
+  source_role: table-of-reference
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::agent_md_guided_first_reading_order
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::agent_md_purpose
+  source_role: explanation
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::agent_must_use_support_when_present
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::boundary_before_modification
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::change_policy_agent_execution_rule
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::change_policy_authority_rule
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+  omission_reason: supporting-repeat-not-retained-first-pass
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::change_policy_core_object
+  source_role: table-of-reference
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::change_policy_default_behavior
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::change_policy_high_risk_rules
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::change_policy_purpose
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::change_policy_require_confirmation_rules
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::deterministic_context_loading
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::fast_agent_takeover
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::load_rules_agent_context_loading_flow
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::load_rules_authority_rule
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+  omission_reason: supporting-repeat-not-retained-first-pass
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::load_rules_core_object
+  source_role: table-of-reference
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::load_rules_default_rules
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::load_rules_trigger_conditions
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::project_map_agent_navigation_flow
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::project_map_authority_rule
+  source_role: guard-boundary
+  conditions:
+  - support-enabled
+  omission_reason: supporting-repeat-not-retained-first-pass
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::project_map_capability_routes_object
+  source_role: normative-rule
+  conditions:
+  - capability-enabled
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::project_map_core_object
+  source_role: table-of-reference
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_support_layer_spec
+  source_anchor: acp_support_layer_spec::support_layer_loading_order
+  source_role: normative-rule
+  conditions:
+  - support-enabled
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::ambiguity_resolution
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::capability_disabled_shape_implications
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::conflict_resolution_order
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::conformance_checker_contract
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::core_philosophy
+  source_role: explanation
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::derived_project_standard_overlay
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::informative_interaction_companion
+  source_role: guard-boundary
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::override_rules
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::profile_precedence
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::profile_semantics
+  source_role: normative-rule
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+- source_document_id: acp_top_spec
+  source_anchor: acp_top_spec::three_concepts
+  source_role: table-of-reference
+  conditions: []
+  omission_reason: not-selected-by-first-pass-retained-manifest
+omission_notes:
+- omission_class: research-excluded
+  scope: all research-track files
+- omission_class: companion-excluded
+  scope: default-excluded companions and repository guides
+- omission_class: example-excluded
+  scope: examples not needed for the first-pass retained rule surface
+- omission_class: redundant-supporting-guard-compressed
+  scope: supporting repeated guards omitted when a canonical retained guard remained
+    explicit
