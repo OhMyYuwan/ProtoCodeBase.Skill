@@ -6,12 +6,12 @@
     <title>ProtoCodeBase Skills</title>
     <meta
       name="description"
-      content="不要让你的 Agent 造轮子。ProtoCodeBase 用协议、项目地图和能力路由，让 Agent 沿着成熟工业模板实现你的需求。"
+      content="ProtoCodeBase Skills 是面向 AI Agent 的协议技能仓库，用 Intent、Request、Plan、Change 和项目路由减少重复理解，让 Agent 更稳定地完成代码变更。"
     >
     <meta property="og:title" content="ProtoCodeBase Skills">
     <meta
       property="og:description"
-      content="省 token，跟随成熟工业模板，需求导向地构建你的项目。"
+      content="一套让 Agent 少读、少猜、少绕路，并按工程链路完成软件演进的技能模板。"
     >
     <meta property="og:image" content="https://ohmyyuwan.github.io/ProtoCodeBase.Skill/assets/github-header-banner.png">
     <link rel="canonical" href="https://ohmyyuwan.github.io/ProtoCodeBase.Skill/">
@@ -23,88 +23,287 @@
   <body>
     <div class="reveal pcb-deck">
       <div class="slides">
-        <section class="slide-hero" data-background-color="#0b0d10">
-          <img class="brand-mark" src="./assets/github-header-banner.png" alt="ProtoCodeBase">
-          <p class="eyebrow">Agent Skill Repository</p>
-          <h1>ProtoCodeBase</h1>
-          <p class="lede">不要让你的 Agent 造轮子。</p>
-          <p class="body-copy">
-            让它少读一点，少猜一点，少在上下文里迷路。让它沿着成熟软件的骨架，
-            把你的需求变成可以落地的代码。
-          </p>
-          <div class="hero-actions">
-            <a href="#/5">安装 Skill</a>
-            <a href="https://github.com/OhMyYuwan/ProtoCodeBase.Skill">GitHub</a>
-          </div>
-        </section>
-
-        <section data-background-color="#f6f1e8" class="light-slide">
-          <p class="eyebrow">Need First</p>
-          <h2>需求先于代码</h2>
-          <p class="statement">
-            代码不是目的，需求才是。
-          </p>
-          <p class="body-copy narrow">
-            一次软件修改值得被保存的，不只是文件差异，还有需求如何被理解、
-            如何被拆解、如何被计划、如何被执行。
-          </p>
-        </section>
-
-        <section data-background-color="#111827">
-          <p class="eyebrow">Engineering Memory</p>
-          <h2>把聊天变成工程链路</h2>
-          <div class="flow">
-            <span>Request</span>
-            <i></i>
-            <span>Plan</span>
-            <i></i>
-            <span>Change</span>
-          </div>
-          <p class="body-copy narrow">
-            你的 Intent 仍然属于你。ProtoCodeBase 持久化的是程序规范化后的请求、
-            Agent 自主执行前的计划，以及真正落到代码里的变更。
-          </p>
-        </section>
-
-        <section data-background-color="#fffaf0" class="light-slide">
-          <p class="eyebrow">Token Economy</p>
-          <h2>省 token，不是省理解</h2>
-          <div class="route-grid">
-            <div>
-              <strong>Capabilities</strong>
-              <span>这个 App 实际能做什么</span>
+        <section class="slide-hero tech-slide" data-background-color="#07111f">
+          <div class="slide-shell hero-layout">
+            <div class="hero-copy">
+              <p class="eyebrow">Agent Skill Repository</p>
+              <h1>ProtoCodeBase</h1>
+              <p class="lede">不要让你的 Agent 重复造轮子。</p>
+              <p class="body-copy">
+                让它少读一点，少猜一点，少在上下文里迷路。ProtoCodeBase 的重点不是让 Agent 写更多代码，
+                而是更快找到值得参考的那一小块代码，以及真正需要修改的那一小块代码。
+              </p>
+              <div class="hero-actions">
+                <a href="#/8">安装 Skill</a>
+                <a href="https://github.com/OhMyYuwan/ProtoCodeBase.Skill">GitHub</a>
+              </div>
             </div>
-            <div>
-              <strong>Project Map</strong>
-              <span>模块如何组织，责任如何分配</span>
-            </div>
-            <div>
-              <strong>Route</strong>
-              <span>从需求直达目标代码位置</span>
+
+            <div class="hero-panel" aria-label="ProtoCodeBase overview">
+              <img class="brand-mark" src="./assets/github-header-banner.png" alt="ProtoCodeBase">
+              <div class="signal-card active">
+                <span>Protocol</span>
+                <strong>ACP v1.0.0</strong>
+              </div>
+              <div class="signal-card">
+                <span>Workflow</span>
+                <strong>Intent -> Request -> Plan -> Change</strong>
+              </div>
+              <div class="signal-card">
+                <span>Goal</span>
+                <strong>Ship code with traceable context</strong>
+              </div>
             </div>
           </div>
         </section>
 
-        <section data-background-color="#0f172a">
-          <p class="eyebrow">Industrial Templates</p>
-          <h2>与其创造，不如继承</h2>
-          <p class="statement">
-            成熟软件已经走过的路，不必每次从空白文件重新发明。
-          </p>
-          <p class="body-copy narrow">
-            文件管理、权限、协作、编辑器、工作流、历史记录、错误处理、部署方式：
-            ProtoCodeBase 希望把这些工业实践沉淀成 Agent 可以检索、裁剪、合并的说明书。
-          </p>
+        <section class="tech-slide" data-background-color="#07111f">
+          <div class="slide-shell">
+            <p class="eyebrow">Why It Matters</p>
+            <h2>Agent 最大的浪费，不是写错几行代码</h2>
+            <div class="pain-grid">
+              <div>
+                <span>01</span>
+                <strong>反复读仓库</strong>
+                <p>每次都重新扫描目录、猜模块边界，真正需要改的地方反而更晚出现。</p>
+              </div>
+              <div>
+                <span>02</span>
+                <strong>聊天记忆脆弱</strong>
+                <p>需求、计划和取舍散落在对话里，下一次接手很难恢复工程上下文。</p>
+              </div>
+              <div>
+                <span>03</span>
+                <strong>整库塞进上下文</strong>
+                <p>Agent 不应该每次都把整个仓库灌进上下文，而应该按项目说明书直达目标位置。</p>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section data-background-color="#f5f7fb" class="light-slide">
-          <p class="eyebrow">Install</p>
-          <h2>把协议交给 Agent</h2>
-          <pre><code>npx skills add https://github.com/OhMyYuwan/ProtoCodeBase.Skill.git --skill acp-v1-0-0</code></pre>
-          <p class="body-copy narrow">
-            安装后，仓库声明自己的协议版本；Agent 读取对应 Skill，
-            再按照协议说明书进入项目，而不是每次重新拆解整个系统。
-          </p>
+        <section class="tech-slide blueprint-slide" data-background-color="#07111f">
+          <div class="slide-shell split-layout">
+            <div>
+              <p class="eyebrow">Need First</p>
+              <h2>需求先于代码</h2>
+              <p class="statement">
+                代码不是目的，需求才是。
+              </p>
+              <p class="body-copy narrow">
+                一个项目里真正值得保存的，不只是文件本身，还有需求如何被理解、如何被拆解、如何被计划、如何被执行。
+                你的 Intent 仍然属于你。协议不需要把它伪装成另一种对象。
+                ProtoCodeBase 持久化的是程序规范化后的工程链路。
+              </p>
+            </div>
+            <div class="metric-board">
+              <div>
+                <span>Input</span>
+                <strong>Intent</strong>
+                <p>来自用户的真实需求</p>
+              </div>
+              <div>
+                <span>Normalized</span>
+                <strong>Request</strong>
+                <p>可计划、可执行的项目请求</p>
+              </div>
+              <div>
+                <span>Output</span>
+                <strong>Trace</strong>
+                <p>留给项目的工程记忆</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tech-slide" data-background-color="#07111f">
+          <div class="slide-shell">
+            <p class="eyebrow">Engineering Memory</p>
+            <h2>把聊天变成工程链路</h2>
+            <div class="flow flow-four">
+              <span>
+                <em>00</em>
+                Intent
+                <small>用户的需求本身</small>
+              </span>
+              <i></i>
+              <span>
+                <em>01</em>
+                Request
+                <small>定义语义目标</small>
+              </span>
+              <i></i>
+              <span>
+                <em>02</em>
+                Plan
+                <small>限定执行范围</small>
+              </span>
+              <i></i>
+              <span>
+                <em>03</em>
+                Change
+                <small>记录真实变更</small>
+              </span>
+            </div>
+            <p class="body-copy narrow centered-copy">
+              软件修改不再只是散落在聊天窗口里的脆弱记忆，而是可以被下一次 Agent 接住的工程上下文。
+            </p>
+          </div>
+        </section>
+
+        <section class="tech-slide" data-background-color="#07111f">
+          <div class="slide-shell token-slide">
+            <p class="eyebrow">Token Economy</p>
+            <h2>省 token，不是省理解</h2>
+            <div class="token-copy">
+              <p>
+                Agent 最贵的浪费，不是多写几行代码，而是反复走进同一片森林，
+                却找不到你要的那棵树。
+              </p>
+              <p>
+                如果一个成熟项目是一台完整的机器，就不要让 Agent 每次都从拆零件开始。
+                给它一份说明书：哪里能改、哪里不能动、改了会影响什么。
+              </p>
+            </div>
+            <div class="route-strip">
+              <code>Capabilities</code>
+              <span></span>
+              <code>Project Map</code>
+              <span></span>
+              <code>Route</code>
+            </div>
+            <div class="route-grid">
+              <div>
+                <span class="card-index">01</span>
+                <strong>Capabilities</strong>
+                <p>描述这个 App 实际能做什么，以及每个能力的边界。</p>
+              </div>
+              <div>
+                <span class="card-index">02</span>
+                <strong>Project Map</strong>
+                <p>描述项目如何组织，哪些模块承载哪些责任。</p>
+              </div>
+              <div>
+                <span class="card-index">03</span>
+                <strong>Route</strong>
+                <p>帮助 Agent 从需求直接定位到目标代码、目标组件和目标服务。</p>
+              </div>
+            </div>
+            <p class="token-footnote">
+              这样，Agent 不必把整个仓库塞进上下文；它可以释放旧上下文，只保留被规范化的工作信息，
+              下一次回来也能从说明书里重新找到目标位置。
+            </p>
+          </div>
+        </section>
+
+        <section class="tech-slide" data-background-color="#07111f">
+          <div class="slide-shell split-layout">
+            <div>
+              <p class="eyebrow">Industrial Templates</p>
+              <h2>与其创造，不如继承</h2>
+              <p class="statement">
+                成熟软件已经走过的路，不必每次从空白文件重新发明。
+              </p>
+              <p class="body-copy narrow">
+                文件管理、权限、协作、编辑器、工作流、历史记录、错误处理、部署方式和用户界面，
+                都可以沉淀成 Agent 可参考、可裁剪、可合并的说明书。
+              </p>
+            </div>
+            <div class="stack-panel">
+              <span>Reference Layer</span>
+              <strong>Protocol</strong>
+              <strong>Templates</strong>
+              <strong>Playbook</strong>
+              <strong>Trace</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="tech-slide" data-background-color="#07111f">
+          <div class="slide-shell">
+            <p class="eyebrow">Repository Package</p>
+            <h2>这个仓库交付什么</h2>
+            <div class="package-grid">
+              <div>
+                <strong>Skill Wrapper</strong>
+                <p>让 Agent 识别 ACP v1.0.0 项目，并按协议进入工作流。</p>
+              </div>
+              <div>
+                <strong>Protocol References</strong>
+                <p>包含公共草案、Agent playbook、审计追踪和版本说明。</p>
+              </div>
+              <div>
+                <strong>Authoring Templates</strong>
+                <p>提供 Request、Plan、Change 的对象模板。</p>
+              </div>
+              <div>
+                <strong>Registry & Docs</strong>
+                <p>提供 skill registry、GitHub Pages、README、许可证和使用说明。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tech-slide" data-background-color="#07111f">
+          <div class="slide-shell">
+            <p class="eyebrow">Project Declaration</p>
+            <h2>项目如何声明自己使用 ACP</h2>
+            <div class="manifest-layout">
+              <pre><code>protocol: acp
+protocol_version: "1.0.0"
+required_skill: acp-v1-0-0</code></pre>
+              <div class="manifest-notes">
+                <div>
+                  <strong>技能选择</strong>
+                  <p>仓库声明协议版本，Agent 读取对应 Skill，而不是猜测项目规则。</p>
+                </div>
+                <div>
+                  <strong>版本边界</strong>
+                  <p>未来的协议版本可以独立添加，避免不同规则混在一起。</p>
+                </div>
+                <div>
+                  <strong>权利说明</strong>
+                  <p>Skill wrapper 采用 MIT；内置协议文本和 reference package 可能有自己的 LICENSE。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="install-slide tech-slide" data-background-color="#07111f">
+          <div class="slide-shell install-layout">
+            <div>
+              <p class="eyebrow">Install</p>
+              <h2>把协议交给Agent</h2>
+              <p class="body-copy narrow">
+                安装后，目标仓库声明自己的协议版本；Agent 读取对应 Skill，
+                再按照协议说明书进入项目，而不是每次重新拆解整个系统。
+              </p>
+            </div>
+            <div class="command-panel">
+              <span>Terminal</span>
+              <pre><code>npx skills add https://github.com/OhMyYuwan/ProtoCodeBase.Skill.git --skill acp-v1-0-0</code></pre>
+              <div class="install-links">
+                <a href="https://github.com/OhMyYuwan/ProtoCodeBase.Skill">Open GitHub</a>
+                <button class="copy-command" type="button" data-copy-command>Copy Command</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="closing-slide tech-slide" data-background-color="#07111f">
+          <div class="slide-shell closing-layout">
+            <p class="eyebrow">ProtoCodeBase Skills</p>
+            <h2>让 Agent 沿着工程结构前进</h2>
+            <p class="body-copy">
+              少一点重复扫描，少一点上下文漂移，多一点可追踪的需求、计划和变更记录。
+            </p>
+            <div class="closing-badges">
+              <span>ACP v1.0.0</span>
+              <span>Request / Plan / Change</span>
+              <span>MIT licenses</span>
+              <span>Code->Competency->Module->Project</span>
+            </div>
+          </div>
         </section>
       </div>
     </div>
@@ -122,9 +321,37 @@
         backgroundTransition: 'fade',
         width: 1280,
         height: 720,
-        margin: 0.06,
+        margin: 0.04,
         minScale: 0.2,
         maxScale: 1.6
+      });
+
+      const copyButton = document.querySelector('[data-copy-command]');
+      const command = 'npx skills add https://github.com/OhMyYuwan/ProtoCodeBase.Skill.git --skill acp-v1-0-0';
+
+      copyButton.addEventListener('click', async () => {
+        try {
+          if (navigator.clipboard) {
+            await navigator.clipboard.writeText(command);
+          } else {
+            const textArea = document.createElement('textarea');
+            textArea.value = command;
+            textArea.setAttribute('readonly', '');
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+          }
+          copyButton.textContent = 'Copied';
+        } catch {
+          copyButton.textContent = 'Copy failed';
+        }
+
+        window.setTimeout(() => {
+          copyButton.textContent = 'Copy Command';
+        }, 1600);
       });
     </script>
   </body>
